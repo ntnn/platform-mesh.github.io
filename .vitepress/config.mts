@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default withMermaid({
   title: "Platform Mesh",
 
-  base: process.env.PAGES_BASE ? process.env.PAGES_BASE : '/',
+  base: process.env.PAGES_BASE ? '/' + process.env.PAGES_BASE : '/',
 
   description: "Platform Mesh - Building upon the Kubernetes API & Resource Model",
 
