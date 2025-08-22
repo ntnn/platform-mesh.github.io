@@ -18,9 +18,6 @@ permissions:
   contents: write # to write the built page to the branch
   pull-requests: write # to leave a comment with the preview URL
 
-env:
-  PAGES_BASE: ${{ github.event_name == 'pull_request' && format('pr-preview/pr-{0}', github.event.pull_request.number) || '/' }}
-
 concurrency:
   # set separate concurrency groups for main and PR branches
   group: ${{ github.event_name == 'pull_request' && format('pages-preview-{0}', github.event.pull_request.number) || 'pages-main' }}
@@ -54,18 +51,14 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          PAGES_BASE: ${{ github.event_name == 'pull_request' && format('pr-preview/pr-{0}', github.event.pull_request.number) || '/' }}
 
       # deploy the PR to a preview URL
       - uses: rossjrw/pr-preview-action@9f77b1d057b494e662c50b8ca40ecc63f21e0887 # v1
         if: ${{ github.event_name == 'pull_request' }}
         with:
           source-dir: .vitepress/dist
-
-      # - uses: thollander/actions-comment-pull-request@v3
-      #   if: github.event_name == 'pull_request'
-      #   with:
-      #     message: |
-      #       A preview has been deployed to ${{ format('{0}/{1}', steps.configure.outputs.base_url, env.PAGES_BASE) }}
 
       # deploy the build to GitHub Pages
       - uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4
