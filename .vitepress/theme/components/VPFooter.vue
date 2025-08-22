@@ -43,7 +43,7 @@ const projectName = title || 'PlatformMesh'
         <div class="funding-image">
           <div class="funding-image-container">
             <div class="funding-image-bg"></div>
-            <img src="/public/eu-support.png" alt="EU and German government funding logos" class="funding-image-src">
+            <img src="/eu-support.png" alt="EU and German government funding logos" class="funding-image-src">
           </div>
         </div>
         <div class="funding-text">
@@ -71,7 +71,7 @@ const projectName = title || 'PlatformMesh'
       <div class="neonephos-logos">
         <a href="https://neonephos.org/" target="_blank" rel="noopener noreferrer" class="neonephos-link">
           <img
-            src="/public/neonephos_logo.svg"
+            src="/neonephos_logo.svg"
             alt="Neonephos Logo"
             class="neonephos-logo"
           >
