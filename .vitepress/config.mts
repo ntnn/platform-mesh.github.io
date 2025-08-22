@@ -4,6 +4,9 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
   title: "Platform Mesh",
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
 
   base: process.env.PAGES_BASE ? '/' + process.env.PAGES_BASE : '/',
 
