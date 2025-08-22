@@ -5,6 +5,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default withMermaid({
   title: "Platform Mesh",
 
+  base: process.env.PAGES_BASE ? process.env.PAGES_BASE : '/',
 
   description: "Platform Mesh - Building upon the Kubernetes API & Resource Model",
 
@@ -41,7 +42,6 @@ export default withMermaid({
       width: 24,
       height: 24
     },
-  
 
     outline: [2, 3, 4, 5],
 
@@ -63,7 +63,7 @@ export default withMermaid({
             ]
         }
       ],
-      
+
         '/scenarios': {
             test: 'Scenarios',
             items:  [
@@ -72,13 +72,11 @@ export default withMermaid({
             ],
         },
 
-
     },
-  
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/platform-mesh' }
     ]
   },
- 
+
 })
