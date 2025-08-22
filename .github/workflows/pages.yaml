@@ -60,11 +60,12 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         with:
           source-dir: .vitepress/dist
-      - uses: thollander/actions-comment-pull-request@v3
-        if: github.event_name == 'pull_request'
-        with:
-          message: |
-            A preview has been deployed to ${{ format('{0}/{1}', steps.configure.outputs.base_url, env.PAGES_BASE) }}
+
+      # - uses: thollander/actions-comment-pull-request@v3
+      #   if: github.event_name == 'pull_request'
+      #   with:
+      #     message: |
+      #       A preview has been deployed to ${{ format('{0}/{1}', steps.configure.outputs.base_url, env.PAGES_BASE) }}
 
       # deploy the build to GitHub Pages
       - uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4
