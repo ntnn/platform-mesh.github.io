@@ -6,6 +6,9 @@ export default withMermaid({
   title: "Platform Mesh",
 
   base: process.env.PAGES_BASE ? '/' + process.env.PAGES_BASE : '/',
+  head: [
+    ['link', { rel: 'icon', href: '/public/pm_logo.svg' }],
+  ],
 
   description: "Platform Mesh - Building upon the Kubernetes API & Resource Model",
 
@@ -38,7 +41,7 @@ export default withMermaid({
     ],
 
     logo: {
-      src: 'assets/pm_logo.svg',
+      src: '/public/pm_logo.svg',
       width: 24,
       height: 24
     },
