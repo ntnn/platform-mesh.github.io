@@ -15,13 +15,13 @@ export default withMermaid({
         {
           find: /^.*\/VPFooter\.vue$/,
           replacement: fileURLToPath(
-              new URL('./theme/components/VPFooter.vue', import.meta.url)
+              new URL('theme/components/VPFooter.vue', import.meta.url)
           )
         },
         {
           find: /^.*\/VPFeature\.vue$/,
           replacement: fileURLToPath(
-              new URL('./theme/components/VPFeature.vue', import.meta.url)
+              new URL('theme/components/VPFeature.vue', import.meta.url)
           )
         },
       ]
@@ -33,12 +33,12 @@ export default withMermaid({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      {text: 'Overview', link: '/overview'},
+      { text: 'Overview', link: '/overview' },
       { text: 'Scenarios', link: '/scenarios' }
     ],
 
     logo: {
-      src: './assets/pm_logo.svg',
+      src: 'assets/pm_logo.svg',
       width: 24,
       height: 24
     },
@@ -77,6 +77,7 @@ export default withMermaid({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/platform-mesh' }
     ]
+
   },
 
 })
