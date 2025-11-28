@@ -36,7 +36,6 @@ export default withMermaid({
     }
   },
 
-
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
